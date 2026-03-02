@@ -73,3 +73,4 @@ export default defineConfig([
 ```
 # My_resume
 # My_resume
+# APP_RESUME
