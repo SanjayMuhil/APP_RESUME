@@ -75,14 +75,14 @@ export default function About() {
             <div className="glass rounded-3xl p-8 md:p-10">
               {/* Decorative Element */}
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl opacity-20 blur-xl" />
-              
+
               <div className="relative">
                 <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   {personalInfo.summary}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-3 mb-8">
-                  {['React.js', 'Tailwind CSS', 'Devops', 'AWS', 'Python' , 'HTML', 'CSS','Next.js'].map((skill, index) => (
+                  {['React.js', 'Tailwind CSS', 'Devops', 'AWS', 'Digital Marketing', 'HTML', 'CSS', 'Next.js'].map((skill, index) => (
                     <motion.span
                       key={skill}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -96,8 +96,8 @@ export default function About() {
                 </div>
 
                 <motion.a
-                  href="RESUME-SANJAY.pdf"
-                  download
+                  href="/RESUME-SANJAY.pdf"
+                  download="RESUME-SANJAY.pdf"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

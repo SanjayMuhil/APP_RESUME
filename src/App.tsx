@@ -7,6 +7,7 @@ import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Education from './sections/Education';
 import Contact from './sections/Contact';
+import DigitalMarketingResume from './sections/DigitalMarketingResume';
 import Footer from './sections/Footer';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Projects />
         <Skills />
         <Education />
+        <DigitalMarketingResume />
         <Contact />
       </main>
       <Footer />

@@ -14,30 +14,37 @@ export const experiences: Experience[] = [
     company: 'Pentagon-Innovations',
     duration: 'July 2024 – October 2024',
     description: [
-   '• Designed responsive user interfaces using HTML, CSS, Bootstrap, React.js, and Next.js, improving user satisfaction ratings by 25%.',
-'• Built scalable and reusable UI components using Bootstrap and Flutter frameworks.',
-'• Enhanced user experience and layout consistency through collaboration with UI/UX designers, leading to a 15% decrease in bounce rates.',
-'• Debugged and resolved front-end issues, ensuring cross-device and cross-browser compatibility.',
-'• Used Git for version control and team collaboration, improving project delivery timelines.',
-'• Containerized applications using Docker for consistent development and deployment environments.',
+      '• Designed responsive user interfaces using HTML, CSS, Bootstrap, React.js, and Next.js, improving user satisfaction ratings by 25%.',
+      '• Built scalable and reusable UI components using Bootstrap and Flutter frameworks.',
+      '• Enhanced user experience and layout consistency through collaboration with UI/UX designers, leading to a 15% decrease in bounce rates.',
+      '• Debugged and resolved front-end issues, ensuring cross-device and cross-browser compatibility.',
+      '• Used Git for version control and team collaboration, improving project delivery timelines.',
+      '• Containerized applications using Docker for consistent development and deployment environments.',
     ],
     technologies: ['HTML', 'CSS', 'Bootstrap', 'Flutter', 'Git', 'Docker', 'React.js', 'Next.js'],
   },
   {
     id: 2,
-    role: 'Front-End Developer & DevOps (AWS) Intern',
+    role: 'Front-End Developer & DevOps (AWS),Digital Marketing Intern',
     company: 'iNoesis Technologies Private Limited',
     duration: 'May 2024 – June 2024',
     description: [
       '• Deployed web applications on AWS EC2 and managed cloud-based infrastructure, reducing downtime by 30%.',
-'• Managed application deployments using Git and basic CI/CD workflows.',
-'• Configured and maintained Linux servers using command-line tools for optimal performance.',
-'• Monitored server performance and executed AMI backups to ensure system reliability.',
-'• Developed responsive web applications using HTML, CSS, Bootstrap, React.js, Tailwind CSS, and React Native.',
-'• Customized Bootstrap components and UI frameworks to enhance user experience.',
-'• Ensured cross-browser compatibility and mobile responsiveness, achieving a 20% increase in mobile traffic.',
+      '• Managed application deployments using Git and basic CI/CD workflows.',
+      '• Configured and maintained Linux servers using command-line tools for optimal performance.',
+      '• Monitored server performance and executed AMI backups to ensure system reliability.',
+      '• Developed responsive web applications using HTML, CSS, Bootstrap, React.js, Tailwind CSS, and React Native.',
+      '• Customized Bootstrap components and UI frameworks to enhance user experience.',
+      '• Ensured cross-browser compatibility and mobile responsiveness, achieving a 20% increase in mobile traffic.',
+      '• Planned and executed digital marketing strategies including SEO and SEM to improve online visibility.',
+      '• Created and managed campaigns using Google Ads to drive targeted traffic.',
+      '• Optimized website content using SEO techniques such as keyword research and on-page optimization.',
+      '• Managed social media marketing on Instagram, Facebook, and LinkedIn to increase engagement and reach.',
+      '• Designed promotional content and creatives using Canva for campaigns and posts.',
+      '• Analyzed campaign performance using Google Analytics to improve conversion and engagement rates.',
+      '• Implemented basic web advertising strategies including display ads and retargeting techniques.',
     ],
-    technologies: ['HTML', 'CSS', 'Bootstrap', 'React.js', 'Tailwind', 'React Native','devops', 'Github', 'AWS', 'Linux'],
+technologies: ['HTML', 'CSS', 'Bootstrap', 'Digital Marketing', 'Tailwind', 'React Native', 'devops', 'Github', 'AWS', 'Linux'],
   },
 ];
 
@@ -101,20 +108,29 @@ export const skills: Skill[] = [
   { name: 'Tailwind CSS', level: 92, category: 'frontend', icon: 'wind' },
   { name: 'Bootstrap', level: 90, category: 'frontend', icon: 'layout' },
   { name: 'Next.js', level: 75, category: 'frontend', icon: 'server' },
-  
+
   // Backend/Database
   { name: 'MySQL', level: 70, category: 'backend', icon: 'database' },
   { name: 'Python', level: 75, category: 'backend', icon: 'code' },
-  
+
   // DevOps & Cloud
   { name: 'Linux', level: 65, category: 'devops', icon: 'terminal' },
   { name: 'AWS', level: 60, category: 'devops', icon: 'cloud' },
   { name: 'DevOps', level: 55, category: 'devops', icon: 'settings' },
-  
+
   // Tools
   { name: 'Git', level: 85, category: 'tools', icon: 'git-branch' },
   { name: 'OpenCV', level: 70, category: 'tools', icon: 'eye' },
   { name: 'MediaPipe', level: 65, category: 'tools', icon: 'hand' },
+
+  // Digital Marketing
+  { name: 'Digital Marketing', level: 75, category: 'tools', icon: 'trending-up' },
+  { name: 'SEO', level: 70, category: 'tools', icon: 'search' },
+  { name: 'Pay Per Click (PPC)', level: 65, category: 'tools', icon: 'mouse-pointer' },
+  { name: 'Social Media Marketing', level: 72, category: 'tools', icon: 'share-2' },
+  { name: 'Content Marketing', level: 68, category: 'tools', icon: 'file-text' },
+  { name: 'Content Creation', level: 70, category: 'tools', icon: 'edit' },
+  { name: 'Generative Engine Optimization', level: 60, category: 'tools', icon: 'zap' },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -125,6 +141,6 @@ export const socialLinks: SocialLink[] = [
 
 export const personalInfo = {
   name: 'Sanjay Muhilarasu',
-  title: 'Front-End Developer | DevOps | AWS | Linux Enthusiast',
-  summary: 'BCA graduate specializing in front-end development with expertise in HTML, CSS, Bootstrap, React.js, and Tailwind. Proficient in creating dynamic and responsive web templates that enhance user experience, resulting in a 30% increase in user engagement. Knowledgeable in Linux,AWS, and DevOps, contributing to efficient project workflows and reducing deployment times by 20%. Committed to merging technology and creativity to deliver engaging digital solutions.',
+  title: 'Front-End Developer | DevOps | AWS | Linux | Digital Marketing',
+  summary: 'BCA graduate specializing in front-end development with expertise in HTML, CSS, Bootstrap, React.js, and Digital Marketing. Proficient in creating dynamic and responsive web templates that enhance user experience, resulting in a 30% increase in user engagement. Knowledgeable in Linux,AWS, and DevOps, contributing to efficient project workflows and reducing deployment times by 20%. Committed to merging technology and creativity to deliver engaging digital solutions.',
 };

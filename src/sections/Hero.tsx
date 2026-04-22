@@ -128,7 +128,7 @@ export default function Hero() {
     >
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900/20" />
-      
+
       {/* Animated Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -257,7 +257,7 @@ export default function Hero() {
                 transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                 className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 opacity-75 blur-sm"
               />
-              
+
               {/* Profile Image */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -269,7 +269,7 @@ export default function Hero() {
                   alt={personalInfo.name}
                   className="w-96 h-90 object-cover"
                 />
-                
+
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent" />
               </motion.div>
@@ -280,9 +280,9 @@ export default function Hero() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-4 -right-4 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
               >
-                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">React.js</span>
+                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Digital Marketing</span>
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
