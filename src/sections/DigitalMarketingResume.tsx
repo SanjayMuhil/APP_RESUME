@@ -1,30 +1,31 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import {
-  Target,
+  Search,
+  FileText,
   TrendingUp,
   Users,
-  BarChart3,
+  Target,
   Megaphone,
-  Globe,
   Linkedin,
-  Search,
-  PenTool,
-  Star,
+  Globe,
   Award,
   Zap,
   ChevronDown,
   ChevronUp,
   CheckCircle,
-  Download,
-  ExternalLink,
-  Sparkles,
+  Eye,
   MousePointer,
   Share2,
-  Eye,
+  PenTool,
+  BarChart3,
   Youtube,
   MessageCircle,
+  Sparkles,
+  ExternalLink,
+  Star,
+  Download,
 } from 'lucide-react';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -43,13 +44,11 @@ const dmPersonalInfo = {
 
 const skills = [
   { name: 'SEO / SEM', level: 82, icon: Search, color: 'from-blue-500 to-blue-600', bg: 'bg-blue-500/10', text: 'text-blue-600 dark:text-blue-400' },
-  { name: 'Social Media Marketing', level: 88, icon: Share2, color: 'from-pink-500 to-rose-600', bg: 'bg-pink-500/10', text: 'text-pink-600 dark:text-pink-400' },
-  { name: 'Content Creation', level: 85, icon: PenTool, color: 'from-purple-500 to-violet-600', bg: 'bg-purple-500/10', text: 'text-purple-600 dark:text-purple-400' },
-  { name: 'Web Advertising (PPC)', level: 75, icon: Megaphone, color: 'from-amber-500 to-orange-600', bg: 'bg-amber-500/10', text: 'text-amber-600 dark:text-amber-400' },
-  { name: 'Google Analytics', level: 78, icon: BarChart3, color: 'from-emerald-500 to-teal-600', bg: 'bg-emerald-500/10', text: 'text-emerald-600 dark:text-emerald-400' },
-  { name: 'Campaign Strategy', level: 80, icon: Target, color: 'from-indigo-500 to-blue-600', bg: 'bg-indigo-500/10', text: 'text-indigo-600 dark:text-indigo-400' },
-  { name: 'Audience Engagement', level: 87, icon: Users, color: 'from-rose-500 to-pink-600', bg: 'bg-rose-500/10', text: 'text-rose-600 dark:text-rose-400' },
-  { name: 'Brand Promotion', level: 84, icon: TrendingUp, color: 'from-cyan-500 to-sky-600', bg: 'bg-cyan-500/10', text: 'text-cyan-600 dark:text-cyan-400' },
+  { name: 'Social Media Marketing', level: 88, icon: Megaphone, color: 'from-purple-500 to-purple-600', bg: 'bg-purple-500/10', text: 'text-purple-600 dark:text-purple-400' },
+  { name: 'Content Marketing', level: 80, icon: FileText, color: 'from-emerald-500 to-emerald-600', bg: 'bg-emerald-500/10', text: 'text-emerald-600 dark:text-emerald-400' },
+  { name: 'Growth & Analytics', level: 75, icon: TrendingUp, color: 'from-amber-500 to-amber-600', bg: 'bg-amber-500/10', text: 'text-amber-600 dark:text-amber-400' },
+  { name: 'PPC & Meta Ads', level: 78, icon: Target, color: 'from-pink-500 to-rose-600', bg: 'bg-pink-500/10', text: 'text-pink-600 dark:text-pink-400' },
+  { name: 'Generative Engine Optimization (GEO)', level: 75, icon: Zap, color: 'from-indigo-500 to-indigo-600', bg: 'bg-indigo-500/10', text: 'text-indigo-600 dark:text-indigo-400' },
 ];
 
 const experiences = [
@@ -201,27 +200,6 @@ declare function html2pdf(): {
 export default function DigitalMarketingResume() {
   const { ref, isVisible } = useScrollAnimation(0.05);
   const [expandedExp, setExpandedExp] = useState<number | null>(null);
-  const resumeRef = useRef<HTMLDivElement>(null);
-
-  const downloadPDF = async () => {
-    const element = resumeRef.current;
-    if (!element) return;
-
-    // Dynamically import html2pdf.js (avoids SSR issues)
-    const html2pdfLib = await import('html2pdf.js');
-    const h2p = (html2pdfLib.default || html2pdfLib) as typeof html2pdf;
-
-    const opt = {
-      margin:       [8, 8, 8, 8],
-      filename:     'Sanjay_Muhilarasu_Digital_Marketing_Resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true, logging: false },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] },
-    };
-
-    h2p().set(opt).from(element).save();
-  };
 
 
   return (
@@ -237,9 +215,6 @@ export default function DigitalMarketingResume() {
       </div>
 
       <div ref={ref} className="container-custom relative z-10">
-        {/* printable region — ref attached here captures full resume */}
-        <div ref={resumeRef}>
-
         {/* ── HEADER BADGE ── */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -729,8 +704,6 @@ export default function DigitalMarketingResume() {
           </div>
         </motion.div>
 
-        </div>{/* end resumeRef div */}
-
         {/* Download Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -741,15 +714,16 @@ export default function DigitalMarketingResume() {
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
             📄 Click below to download a clean PDF of this resume directly to your device.
           </p>
-          <button
-            onClick={downloadPDF}
+          <a
+            href="/Sanjay.Muhilarasu_update.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Sanjay_Muhilarasu_Resume.pdf"
             className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-shadow"
           >
             <Download className="h-4 w-4" /> Download PDF Resume
-          </button>
+          </a>
         </motion.div>
-
-
       </div>
     </section>
   );

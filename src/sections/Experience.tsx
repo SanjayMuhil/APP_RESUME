@@ -9,11 +9,8 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative section-padding bg-gray-50 dark:bg-gray-800/50 overflow-hidden"
+      className="relative section-padding bg-[#050505] text-white overflow-hidden"
     >
-      {/* Background Decorations */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
-
       <div ref={ref} className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -26,15 +23,15 @@ export default function Experience() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-zinc-300 text-sm font-medium mb-4"
           >
-            <Briefcase className="w-4 h-4" />
+            <Briefcase className="w-4 h-4 text-zinc-400" />
             Work Experience
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="gradient-text">Professional</span> Journey
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
             A timeline of my professional growth and the valuable experiences I've gained along the way.
           </p>
         </motion.div>
@@ -42,7 +39,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-emerald-500 transform md:-translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-zinc-800 transform md:-translate-x-1/2" />
 
           {/* Experience Cards */}
           <div className="space-y-12">
@@ -61,7 +58,7 @@ export default function Experience() {
                   initial={{ scale: 0 }}
                   animate={isVisible ? { scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.2 + 0.3, type: 'spring' }}
-                  className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 border-4 border-white dark:border-gray-900 transform -translate-x-1/2 z-10 shadow-lg shadow-blue-500/50"
+                  className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-zinc-900 border-2 border-white/40 transform -translate-x-1/2 z-10 shadow-md"
                 />
 
                 {/* Content Card */}
@@ -69,27 +66,24 @@ export default function Experience() {
                   index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
                 }`}>
                   <motion.div
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className="group relative p-6 md:p-8 rounded-2xl bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
+                    whileHover={{ y: -4 }}
+                    className="group relative p-6 md:p-8 rounded-xl bg-[#0A0A0A] border border-white/10 hover:border-white/20 transition-all shadow-lg text-white"
                   >
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all" />
-
                     <div className="relative">
                       {/* Header */}
                       <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold">
+                        <span className="px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-zinc-300 text-xs font-semibold">
                           {exp.duration}
                         </span>
                       </div>
 
                       {/* Role & Company */}
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                         {exp.role}
                       </h3>
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
-                        <MapPin className="w-4 h-4" />
-                        <span className="font-medium">{exp.company}</span>
+                      <div className="flex items-center gap-2 text-zinc-400 mb-4">
+                        <MapPin className="w-4 h-4 text-zinc-400" />
+                        <span className="font-medium text-zinc-300">{exp.company}</span>
                       </div>
 
                       {/* Description */}
@@ -100,9 +94,9 @@ export default function Experience() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={isVisible ? { opacity: 1, x: 0 } : {}}
                             transition={{ delay: index * 0.2 + 0.4 + i * 0.1 }}
-                            className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
+                            className="flex items-start gap-2 text-zinc-300"
                           >
-                            <ChevronRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
+                            <ChevronRight className="w-4 h-4 text-zinc-400 mt-1 flex-shrink-0" />
                             <span className="text-sm">{item}</span>
                           </motion.li>
                         ))}
@@ -113,7 +107,7 @@ export default function Experience() {
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs font-medium"
+                            className="px-3 py-1 rounded-md bg-zinc-900 border border-white/10 text-zinc-300 text-xs font-medium"
                           >
                             {tech}
                           </span>

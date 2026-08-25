@@ -53,14 +53,8 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative section-padding bg-gray-50 dark:bg-gray-800/50 overflow-hidden"
+      className="relative section-padding bg-[#050505] text-white overflow-hidden"
     >
-      {/* Background Decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 rounded-full blur-3xl" />
-      </div>
-
       <div ref={ref} className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -73,15 +67,15 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-zinc-300 text-sm font-medium mb-4"
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-4 h-4 text-zinc-400" />
             Get In Touch
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you!
           </p>
         </motion.div>
@@ -101,15 +95,15 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500/50 transition-all group"
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-4 p-5 rounded-xl bg-[#0A0A0A] border border-white/10 hover:border-white/20 transition-all group shadow-md"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                    <Mail className="w-6 h-6 text-blue-500 group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-900 dark:text-white">{contactInfo.email}</p>
+                    <p className="text-sm text-zinc-400">Email</p>
+                    <p className="font-semibold text-white">{contactInfo.email}</p>
                   </div>
                 </motion.a>
 
@@ -118,15 +112,15 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 hover:border-emerald-500/50 transition-all group"
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-4 p-5 rounded-xl bg-[#0A0A0A] border border-white/10 hover:border-white/20 transition-all group shadow-md"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
-                    <Phone className="w-6 h-6 text-emerald-500 group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
-                    <p className="font-semibold text-gray-900 dark:text-white">{contactInfo.phone}</p>
+                    <p className="text-sm text-zinc-400">Phone</p>
+                    <p className="font-semibold text-white">{contactInfo.phone}</p>
                   </div>
                 </motion.a>
 
@@ -134,21 +128,21 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 }}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700"
+                  className="flex items-center gap-4 p-5 rounded-xl bg-[#0A0A0A] border border-white/10 shadow-md"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-purple-500" />
+                  <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                    <p className="font-semibold text-gray-900 dark:text-white">{contactInfo.location}</p>
+                    <p className="text-sm text-zinc-400">Location</p>
+                    <p className="font-semibold text-white">{contactInfo.location}</p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Social Links */}
               <div>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-sm font-medium text-zinc-300 mb-4">
                   Follow me on
                 </p>
                 <div className="flex gap-3">
@@ -161,13 +155,13 @@ export default function Contact() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 rounded-xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all"
+                      whileHover={{ y: -4, scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-12 h-12 rounded-xl bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:border-white/30 transition-all shadow-md"
                     >
-                      {link.icon === 'linkedin' && <Linkedin className="w-5 h-5" />}
-                      {link.icon === 'github' && <Github className="w-5 h-5" />}
-                      {link.icon === 'mail' && <Mail className="w-5 h-5" />}
+                      {link.icon === 'linkedin' && <Linkedin className="w-5 h-5 text-white" />}
+                      {link.icon === 'github' && <Github className="w-5 h-5 text-white" />}
+                      {link.icon === 'mail' && <Mail className="w-5 h-5 text-white" />}
                     </motion.a>
                   ))}
                 </div>
@@ -181,8 +175,8 @@ export default function Contact() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="rounded-xl bg-[#0A0A0A] border border-white/10 p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Send a Message
               </h3>
 
@@ -196,21 +190,21 @@ export default function Contact() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', stiffness: 200 }}
-                    className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-4"
+                    className="w-16 h-16 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center mb-4"
                   >
-                    <CheckCircle className="w-8 h-8 text-emerald-500" />
+                    <CheckCircle className="w-8 h-8 text-white" />
                   </motion.div>
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h4 className="text-xl font-bold text-white mb-2">
                     Message Sent!
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-zinc-400">
                     Thank you for reaching out. I'll get back to you soon!
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-700 dark:text-gray-300">
+                    <Label htmlFor="name" className="text-zinc-300">
                       Your Name
                     </Label>
                     <Input
@@ -220,12 +214,12 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Sanjay Muhilarasu"
                       required
-                      className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
+                      className="bg-black border-white/10 text-white focus:border-white/30 focus:ring-0"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">
+                    <Label htmlFor="email" className="text-zinc-300">
                       Email Address
                     </Label>
                     <Input
@@ -236,12 +230,12 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Sanjay.muhilarasu@gmail.com"
                       required
-                      className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
+                      className="bg-black border-white/10 text-white focus:border-white/30 focus:ring-0"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-gray-700 dark:text-gray-300">
+                    <Label htmlFor="message" className="text-zinc-300">
                       Message
                     </Label>
                     <Textarea
@@ -252,27 +246,27 @@ export default function Contact() {
                       placeholder="Tell me about your project..."
                       required
                       rows={4}
-                      className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500 resize-none"
+                      className="bg-black border-white/10 text-white focus:border-white/30 focus:ring-0 resize-none"
                     />
                   </div>
 
                   <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-6 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all"
+                      className="w-full py-6 rounded-lg bg-white text-black font-bold text-xs shadow-md hover:bg-zinc-200 transition-colors"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin text-black" />
                           Sending...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 mr-2" />
+                          <Send className="w-5 h-5 mr-2 text-black" />
                           Send Message
                         </>
                       )}

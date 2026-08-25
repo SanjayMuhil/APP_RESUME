@@ -49,6 +49,11 @@ module.exports = {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        gageda: ['Gageda', 'Inter', 'sans-serif'],
+        display: ['Gageda', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",

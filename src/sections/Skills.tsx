@@ -16,37 +16,41 @@ import {
   Eye,
   Hand,
   Smartphone,
-  FileCode
+  FileCode,
+  Megaphone,
+  Search,
+  MousePointer,
+  Share2,
+  FileText,
+  Edit,
+  Zap,
+  Container,
+  RefreshCw
 } from 'lucide-react';
 
-const categoryConfig = {
+const categoryConfig: Record<string, {
+  label: string;
+  icon: React.ElementType;
+}> = {
   frontend: {
     label: 'Frontend Development',
     icon: Layout,
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'bg-blue-500/10',
-    textColor: 'text-blue-600 dark:text-blue-400',
   },
   backend: {
     label: 'Backend & Database',
     icon: Database,
-    color: 'from-purple-500 to-purple-600',
-    bgColor: 'bg-purple-500/10',
-    textColor: 'text-purple-600 dark:text-purple-400',
   },
   devops: {
     label: 'DevOps & Cloud',
     icon: Cloud,
-    color: 'from-emerald-500 to-emerald-600',
-    bgColor: 'bg-emerald-500/10',
-    textColor: 'text-emerald-600 dark:text-emerald-400',
+  },
+  'digital-marketing': {
+    label: 'Digital Marketing & Growth',
+    icon: Megaphone,
   },
   tools: {
     label: 'Tools & Technologies',
     icon: Wrench,
-    color: 'from-amber-500 to-amber-600',
-    bgColor: 'bg-amber-500/10',
-    textColor: 'text-amber-600 dark:text-amber-400',
   },
 };
 
@@ -66,6 +70,14 @@ const iconMap: Record<string, React.ElementType> = {
   'git-branch': GitBranch,
   eye: Eye,
   hand: Hand,
+  search: Search,
+  'mouse-pointer': MousePointer,
+  'share-2': Share2,
+  'file-text': FileText,
+  edit: Edit,
+  zap: Zap,
+  container: Container,
+  'refresh-cw': RefreshCw,
 };
 
 export default function Skills() {
@@ -80,14 +92,8 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative section-padding bg-gray-50 dark:bg-gray-800/50 overflow-hidden"
+      className="relative section-padding bg-[#050505] text-white overflow-hidden"
     >
-      {/* Background Decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      </div>
-
       <div ref={ref} className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -100,23 +106,23 @@ export default function Skills() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-zinc-300 text-sm font-medium mb-4"
           >
-            <Cpu className="w-4 h-4" />
-            Technical Skills
+            <Cpu className="w-4 h-4 text-zinc-400" />
+            Technical &amp; Marketing Skills
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            My <span className="gradient-text">Tech Stack</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            My <span className="gradient-text">Skills &amp; Expertise</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A comprehensive set of skills I've acquired through education, projects, and professional experience.
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+            Organized by domain: Frontend, Backend, DevOps/Cloud, Digital Marketing, and Core Tools.
           </p>
         </motion.div>
 
         {/* Skills Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
           {Object.entries(skillsByCategory).map(([category, categorySkills], categoryIndex) => {
-            const config = categoryConfig[category as keyof typeof categoryConfig];
+            const config = categoryConfig[category] || categoryConfig['tools'];
             const CategoryIcon = config.icon;
 
             return (
@@ -127,17 +133,17 @@ export default function Skills() {
                 transition={{ duration: 0.6, delay: categoryIndex * 0.15 }}
                 className="relative"
               >
-                <div className="glass rounded-2xl p-6 md:p-8 h-full">
+                <div className="rounded-xl bg-[#0A0A0A] border border-white/10 p-6 md:p-8 h-full shadow-lg hover:border-white/20 transition-all">
                   {/* Category Header */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${config.color} flex items-center justify-center`}>
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center">
                       <CategoryIcon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      <h3 className="text-xl font-bold text-white">
                         {config.label}
                       </h3>
-                      <p className={`text-sm ${config.textColor}`}>
+                      <p className="text-sm text-zinc-400">
                         {categorySkills.length} technologies
                       </p>
                     </div>
@@ -153,32 +159,32 @@ export default function Skills() {
                           key={skill.name}
                           initial={{ opacity: 0, x: -20 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.5, delay: categoryIndex * 0.15 + skillIndex * 0.1 }}
+                          transition={{ duration: 0.5, delay: categoryIndex * 0.15 + skillIndex * 0.08 }}
                           className="group"
                         >
                           <div className="flex items-center gap-3 mb-2">
-                            <div className={`w-8 h-8 rounded-lg ${config.bgColor} flex items-center justify-center`}>
-                              <SkillIcon className={`w-4 h-4 ${config.textColor}`} />
+                            <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center">
+                              <SkillIcon className="w-4 h-4 text-zinc-300" />
                             </div>
-                            <span className="flex-1 font-medium text-gray-700 dark:text-gray-300">
+                            <span className="flex-1 font-medium text-zinc-200 text-sm sm:text-base">
                               {skill.name}
                             </span>
-                            <span className={`text-sm font-semibold ${config.textColor}`}>
+                            <span className="text-sm font-semibold text-zinc-300">
                               {skill.level}%
                             </span>
                           </div>
                           
                           {/* Progress Bar */}
-                          <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                          <div className="relative h-2 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={isVisible ? { width: `${skill.level}%` } : {}}
                               transition={{ 
-                                duration: 1.5, 
-                                delay: categoryIndex * 0.15 + skillIndex * 0.1 + 0.3,
+                                duration: 1.4, 
+                                delay: categoryIndex * 0.15 + skillIndex * 0.08 + 0.2,
                                 ease: [0.16, 1, 0.3, 1]
                               }}
-                              className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${config.color}`}
+                              className="absolute inset-y-0 left-0 rounded-full bg-white"
                             />
                           </div>
                         </motion.div>
@@ -199,22 +205,22 @@ export default function Skills() {
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { label: 'Frontend Skills', value: '8+', icon: Layout },
-            { label: 'Backend Skills', value: '2+', icon: Database },
-            { label: 'Cloud & DevOps', value: '3+', icon: Cloud },
-            { label: 'Tools & Tech', value: '3+', icon: Wrench },
+            { label: 'Frontend Skills', value: '7+', icon: Layout },
+            { label: 'Cloud & DevOps', value: '5+', icon: Cloud },
+            { label: 'Backend & DB', value: '2+', icon: Database },
+            { label: 'Digital Marketing', value: '6+', icon: Megaphone },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="text-center p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700"
+              whileHover={{ y: -4 }}
+              className="text-center p-6 rounded-xl bg-[#0A0A0A] border border-white/10 shadow-lg"
             >
-              <stat.icon className="w-8 h-8 mx-auto mb-3 text-blue-500" />
+              <stat.icon className="w-8 h-8 mx-auto mb-3 text-white" />
               <div className="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+              <div className="text-sm text-zinc-400">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

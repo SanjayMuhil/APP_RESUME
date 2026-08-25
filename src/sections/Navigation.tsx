@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon, Code2 } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { useActiveSection } from '@/hooks/useScrollAnimation';
 
@@ -48,30 +48,53 @@ export default function Navigation() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-lg'
+            ? 'bg-white/85 dark:bg-gray-900/85 backdrop-blur-xl shadow-xl border-b border-gray-200/50 dark:border-gray-800/50'
             : 'bg-transparent'
         }`}
       >
         <nav className="container-custom">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
+            {/* 3D Animated Avatar Logo */}
             <motion.a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('home');
               }}
-              className="flex items-center gap-2 group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 group relative perspective-1000"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
             >
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
-                <Code2 className="w-5 h-5 text-white relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* 3D Outer Glow & Rotation Box */}
+              <div className="relative w-10 h-10 md:w-11 md:h-11 rounded-2xl flex items-center justify-center p-[2px] transition-transform duration-500 group-hover:[transform:rotateY(15deg)_rotateX(10deg)]">
+                {/* 3D Animated Gradient Border */}
+                <span className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500 via-purple-500 to-emerald-400 opacity-90 blur-[2px] group-hover:blur-[6px] group-hover:opacity-100 transition-all duration-300 animate-pulse" />
+                <span className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-600 via-purple-600 to-emerald-500 opacity-100" />
+                
+                {/* Inner 3D Image Frame */}
+                <div className="relative w-full h-full rounded-[14px] overflow-hidden bg-gray-900 shadow-inner z-10 border border-white/20">
+                  <img
+                    src="/profile.jpg"
+                    alt="Sanjay Logo"
+                    className="w-full h-full object-cover object-[center_12%] scale-110 group-hover:scale-125 transition-transform duration-500"
+                  />
+                  {/* Glossy Overlay Reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none" />
+                </div>
               </div>
-              <span className="font-bold text-lg hidden sm:block gradient-text">
-                Sanjay
-              </span>
+
+              {/* Brand Name & 3D Status Indicator */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-base md:text-lg tracking-tight gradient-text">
+                    Sanjay
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping hidden sm:block" />
+                </div>
+                <span className="text-[10px] uppercase font-semibold text-gray-500 dark:text-gray-400 tracking-wider -mt-1 hidden sm:block">
+                  DevOps · Dev
+                </span>
+              </div>
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -105,6 +128,7 @@ export default function Navigation() {
               {/* Theme Toggle */}
               <motion.button
                 onClick={toggleTheme}
+                aria-label="Toggle dark mode"
                 className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 180 }}
                 whileTap={{ scale: 0.9 }}
@@ -120,6 +144,7 @@ export default function Navigation() {
               {/* Mobile Menu Button */}
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
                 className="lg:hidden p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -156,7 +181,7 @@ export default function Navigation() {
                     onClick={() => scrollToSection(item.id)}
                     className={`px-4 py-3 text-left font-medium rounded-xl transition-colors ${
                       activeSection === item.id
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold'
                         : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                   >
