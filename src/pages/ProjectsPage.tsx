@@ -242,7 +242,7 @@ export default function ProjectsPage() {
                       Live Website Preview
                     </span>
                     <span className="font-gageda px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#0894FF] via-[#C959DD] to-[#FF2E54] text-white font-bold text-xs shadow-sm flex items-center gap-1 uppercase tracking-wider">
-                      <span>Live Demo</span>
+                      <span>LIVE PROJECT</span>
                       <ExternalLink className="w-3 h-3 text-white" />
                     </span>
                   </div>

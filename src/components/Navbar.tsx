@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Home,
@@ -18,7 +18,7 @@ import {
   Terminal,
   Layers,
 } from 'lucide-react';
-import { personalInfo, socialLinks, resumeDownloadPath, resumeFilename } from '@/data';
+import { personalInfo, socialLinks } from '@/data';
 
 export const navRoutes = [
   { path: '/', label: 'Home', icon: Home },
@@ -141,26 +141,24 @@ export default function Navbar() {
             ))}
           </div>
 
-          <a
-            href={resumeDownloadPath}
-            download={resumeFilename}
+          <Link
+            to="/resume"
             className="font-gageda px-4 py-2 rounded-full bg-[#0B0F28] hover:bg-white/10 border border-[#0894FF]/50 hover:border-[#0894FF] text-white font-bold text-xs transition-all duration-300 flex items-center gap-1.5 shadow-[0_0_12px_rgba(8,148,255,0.25)] hover:shadow-[0_0_20px_rgba(8,148,255,0.4)] uppercase tracking-wider"
           >
             <Download className="w-3.5 h-3.5 text-[#0894FF]" />
             <span>Resume</span>
-          </a>
+          </Link>
         </div>
 
         {/* ── MOBILE MENU BUTTON ── */}
         <div className="flex items-center gap-2 xl:hidden">
-          <a
-            href={resumeDownloadPath}
-            download={resumeFilename}
+          <Link
+            to="/resume"
             className="font-gageda px-3 py-1.5 rounded-full bg-[#0B0F28] border border-[#0894FF]/50 text-white text-xs font-bold flex items-center gap-1 sm:hidden uppercase tracking-wider"
           >
             <Download className="w-3 h-3 text-[#0894FF]" />
             <span>CV</span>
-          </a>
+          </Link>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -230,14 +228,14 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                <a
-                  href={resumeDownloadPath}
-                  download={resumeFilename}
+                <Link
+                  to="/resume"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="font-gageda px-4 py-2 rounded-lg bg-white text-black font-bold text-xs flex items-center gap-1.5 shadow-md uppercase tracking-wider"
                 >
                   <Download className="w-3.5 h-3.5" />
-                  <span>Download Resume</span>
-                </a>
+                  <span>Resume Viewer</span>
+                </Link>
               </div>
             </div>
           </motion.div>

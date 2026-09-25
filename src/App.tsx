@@ -10,6 +10,7 @@ import SkillsPage from './pages/SkillsPage';
 import ProjectsPage from './pages/ProjectsPage';
 import EducationPage from './pages/EducationPage';
 import ContactPage from './pages/ContactPage';
+import ResumePage from './pages/ResumePage';
 
 // Helper component to handle window scroll and route SEO document titles
 function ScrollToTop() {
@@ -44,6 +45,9 @@ function ScrollToTop() {
       case '/contact':
         document.title = 'Contact | Sanjay Muhilarasu';
         break;
+      case '/resume':
+        document.title = 'Resume Viewer | Sanjay Muhilarasu';
+        break;
       default:
         document.title = 'Sanjay Muhilarasu | IT Portfolio';
         break;
@@ -69,6 +73,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/education" element={<EducationPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/resume" element={<ResumePage />} />
             {/* Fallback to Home */}
             <Route path="*" element={<Home />} />
           </Routes>

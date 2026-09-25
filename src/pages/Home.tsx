@@ -12,14 +12,13 @@ import {
   Award,
   Terminal,
 } from 'lucide-react';
-import { personalInfo, coreProjects, liveProjectsList, resumeDownloadPath, resumeFilename } from '@/data';
-import TypingKeyboard from '@/components/ui/TypingKeyboard';
+import { personalInfo, coreProjects, liveProjectsList } from '@/data';
 import ProjectCard from '@/components/ProjectCard';
 
 export default function Home() {
   return (
     <div className="space-y-16 sm:space-y-20 pb-16 pt-20 sm:pt-24 md:pt-28 text-white overflow-x-clip">
-      {/* ── HERO SECTION (CENTERED WORKSTATION & COLORFUL AMBIENT GLOW) ── */}
+      {/* ── HERO SECTION ── */}
       <section className="relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20">
         {/* Responsive Futuristic Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:2.5rem_2.5rem] md:bg-[size:3.5rem_3.5rem] lg:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none opacity-50 md:opacity-60 lg:opacity-75" />
@@ -73,26 +72,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* 2. CENTERED 3D WORKSTATION WITH COLORFUL GLOW */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative flex justify-center items-center py-1 sm:py-2"
-            aria-label="Centered 3D Workstation Interactive Typing Animation"
-          >
-            {/* Glowing Backdrop Blob */}
-            <div className="absolute inset-0 max-w-2xl mx-auto rounded-3xl bg-gradient-to-r from-[#0894FF]/25 via-[#C959DD]/25 to-[#FF2E54]/20 blur-3xl opacity-70 pointer-events-none" />
-
-            <div className="relative z-10 w-full max-w-3xl">
-              <TypingKeyboard
-                autoTypeText="Sanjay Muhilarasu | Full Stack Developer & DevOps Engineer | React • Next.js • FastAPI • Docker • AWS EC2       "
-                accentColor="#0894FF"
-                secondaryAccent="#C959DD"
-              />
-            </div>
-          </motion.div>
-
           {/* 3. CENTERED HERO CTA BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,16 +88,13 @@ export default function Home() {
               <ArrowRight className="w-4 h-4 text-white" />
             </Link>
 
-            <a
-              href={resumeDownloadPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              download={resumeFilename}
+            <Link
+              to="/resume"
               className="font-gageda w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#0B0F28] border border-[#C959DD]/40 hover:border-[#FF2E54] text-white font-bold text-xs sm:text-sm hover:shadow-[0_0_20px_rgba(201,89,221,0.3)] transition-all flex items-center justify-center gap-2 uppercase tracking-wider active:scale-95"
             >
               <Download className="w-4 h-4 text-[#C959DD]" />
               <span>Download Resume</span>
-            </a>
+            </Link>
 
             <Link
               to="/contact"
@@ -300,13 +276,12 @@ export default function Home() {
             >
               Get In Touch
             </Link>
-            <a
-              href={resumeDownloadPath}
-              download={resumeFilename}
-              className="font-gageda w-full sm:w-auto px-6 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0B0F28] hover:bg-white/10 text-white font-bold text-xs sm:text-sm border border-white/15 transition-colors uppercase tracking-wider"
+            <Link
+              to="/resume"
+              className="font-gageda w-full sm:w-auto px-6 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0B0F28] hover:bg-white/10 text-white font-bold text-xs sm:text-sm border border-white/15 transition-colors uppercase tracking-wider text-center"
             >
               Download Resume
-            </a>
+            </Link>
           </div>
         </div>
       </section>

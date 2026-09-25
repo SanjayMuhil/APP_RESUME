@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Code2, Cloud, TrendingUp, ShieldCheck, Download, CheckCircle2 } from 'lucide-react';
-import { personalInfo, resumeDownloadPath, resumeFilename } from '@/data';
+import { personalInfo } from '@/data';
 import { ProfessionalCard } from '@/components/ui/ProfessionalCard';
 
 export default function AboutPage() {
@@ -83,16 +84,13 @@ export default function AboutPage() {
           </ProfessionalCard>
 
           <div className="flex items-center gap-4">
-            <a
-              href={resumeDownloadPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              download={resumeFilename}
+            <Link
+              to="/resume"
               className="font-gageda px-6 py-3.5 rounded-lg bg-gradient-to-r from-[#0894FF] via-[#C959DD] to-[#FF2E54] text-white font-bold text-sm shadow-md hover:shadow-[0_0_20px_rgba(8,148,255,0.4)] transition-all flex items-center gap-2 uppercase tracking-wider"
             >
               <Download className="w-4 h-4 text-white" />
-              <span>Download Official Resume</span>
-            </a>
+              <span>View Resume</span>
+            </Link>
           </div>
         </motion.div>
       </div>

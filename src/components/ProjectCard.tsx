@@ -162,9 +162,9 @@ export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="font-gageda px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#0894FF] via-[#C959DD] to-[#FF2E54] text-white transition-all flex items-center gap-1.5 text-xs font-bold shadow-md hover:shadow-[0_0_15px_rgba(8,148,255,0.4)] uppercase tracking-wider"
-              aria-label={`Live demo for ${project.title}`}
+              aria-label={`Live project for ${project.title}`}
             >
-              <span>Live Demo</span>
+              <span>LIVE PROJECT</span>
               <ExternalLink className="w-3.5 h-3.5 text-white" />
             </a>
           )}

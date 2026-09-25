@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Layers,
@@ -11,7 +12,7 @@ import {
   Sparkles,
   Download,
 } from 'lucide-react';
-import { developmentWorkflow, fullStackCategories, resumeDownloadPath, resumeFilename } from '@/data';
+import { developmentWorkflow, fullStackCategories } from '@/data';
 import { ProfessionalCard } from '@/components/ui/ProfessionalCard';
 
 export default function FullStackPage() {
@@ -203,16 +204,13 @@ export default function FullStackPage() {
           </p>
 
           <div className="flex justify-center pt-2">
-            <a
-              href={resumeDownloadPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              download={resumeFilename}
+            <Link
+              to="/resume"
               className="font-gageda px-6 py-3.5 rounded-lg bg-gradient-to-r from-[#0894FF] via-[#C959DD] to-[#FF2E54] text-white font-bold text-xs shadow-md hover:shadow-[0_0_20px_rgba(8,148,255,0.4)] transition-all flex items-center gap-2 uppercase tracking-wider"
             >
               <Download className="w-4 h-4 text-white" />
-              <span>Download Official PDF Resume</span>
-            </a>
+              <span>View Official Resume</span>
+            </Link>
           </div>
         </ProfessionalCard>
       </div>

@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Terminal, Github, Linkedin, Mail, Download, ArrowUp, Cpu, ShieldCheck } from 'lucide-react';
-import { personalInfo, socialLinks, resumeDownloadPath, resumeFilename } from '@/data';
+import { personalInfo, socialLinks } from '@/data';
 import { navRoutes } from './Navbar';
 import TechnologyStack from './footer/TechnologyStack';
 
@@ -96,16 +96,13 @@ export default function Footer() {
               ))}
             </div>
 
-            <a
-              href={resumeDownloadPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              download={resumeFilename}
+            <Link
+              to="/resume"
               className="font-gageda inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-lg text-black bg-white hover:bg-zinc-200 transition-all shadow-md uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98]"
             >
               <Download className="w-3.5 h-3.5 text-black" />
-              <span>Download PDF Resume</span>
-            </a>
+              <span>View / Download Resume</span>
+            </Link>
           </div>
         </div>
 
