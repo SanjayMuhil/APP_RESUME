@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Download, FileText } from 'lucide-react';
+import { ArrowLeft, Download, FileText, ExternalLink } from 'lucide-react';
 import { resumeDownloadPath, resumeFilename } from '@/data';
 
 export default function ResumePage() {
@@ -20,7 +20,7 @@ export default function ResumePage() {
 
           <div className="hidden sm:flex items-center gap-2 text-xs font-mono font-semibold text-zinc-300 truncate px-2">
             <FileText className="w-4 h-4 text-[#C959DD] flex-shrink-0" />
-            <span className="truncate">sanjay.muhilarasu.pdf</span>
+            <span className="truncate">sanjay.resume.pdf</span>
           </div>
 
           <a
@@ -35,11 +35,30 @@ export default function ResumePage() {
 
         {/* PDF Viewer Container */}
         <div className="w-full h-[75vh] sm:h-[82vh] rounded-xl overflow-hidden bg-[#0B0F28] border border-white/15 shadow-2xl relative">
-          <iframe
-            src={`${resumeDownloadPath}#toolbar=1&navpanes=0`}
-            className="w-full h-full border-0"
-            title="Sanjay Muhilarasu Portfolio Resume PDF Viewer"
-          />
+          <object
+            data={resumeDownloadPath}
+            type="application/pdf"
+            className="w-full h-full"
+          >
+            <iframe
+              src={`${resumeDownloadPath}#toolbar=1&navpanes=0`}
+              className="w-full h-full border-0"
+              title="Sanjay Muhilarasu Resume"
+            >
+              <div className="p-8 text-center space-y-4">
+                <p className="text-sm text-zinc-300">Your browser does not support embedded PDF viewing.</p>
+                <a
+                  href={resumeDownloadPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0894FF] text-white text-xs font-bold uppercase tracking-wider"
+                >
+                  <span>Open PDF in New Tab</span>
+                  <ExternalLink className="w-4 h-4 text-white" />
+                </a>
+              </div>
+            </iframe>
+          </object>
         </div>
       </div>
     </div>

@@ -30,5 +30,5 @@ export const socialLinks: SocialLinkItem[] = [
   },
 ];
 
-export const resumeDownloadPath = '/Sanjay.Muhilarasu_update.pdf';
-export const resumeFilename = 'Sanjay_Muhilarasu_Resume.pdf';
+export const resumeDownloadPath = '/sanjay.resume.pdf';
+export const resumeFilename = 'sanjay.resume.pdf';
